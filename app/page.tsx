@@ -79,7 +79,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen dark:bg-gradient-to-r from-black via-indigo-900 to-black">
+    <main className="min-h-screen dark:bg-gradient-to-r dark:from-black dark:via-indigo-900 dark:to-black bg-gradient-to-b from-stone-50 to-rose-50">
       <div className="flex flex-col items-center">
         <div className="mt-24">
           Create or join a match.
