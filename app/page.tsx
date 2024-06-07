@@ -1,6 +1,5 @@
 "use client";
 
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount, useReadContract, useWriteContract } from "wagmi";
 import { abi, contractAddress } from "@/lib/abi";
 import { baseSepolia } from "viem/chains";
@@ -80,8 +79,8 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen">
-      <div className="flex flex-col items-center p-24">
+    <main className="min-h-screen dark:bg-gradient-to-r from-black via-indigo-900 to-black">
+      <div className="flex flex-col items-center">
         <div className="mt-24">
           Create or join a match.
           <Badge>{readContractResult?.data?.toString()}</Badge> matches have been played so far.
