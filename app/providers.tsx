@@ -32,7 +32,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         <RainbowKitProvider theme={resolvedTheme === 'dark' ? dark : light}>
           <div className="fixed top-0 left-0 right-0 p-4 flex justify-between text-sm top-0 z-50 w-full border-b dark:border-none dark:bg-white/5 backdrop-blur-sm">
             <div className="text-2xl flex justify-center items-center">
-            <AmpdLogoIcon className="mr-4" width="32px" height="32px" /> AMPDLabs
+              <Image className="mr-2" src="/logo.png" width={32} height={32} alt="AMPD Labs logo" /><span className="text-base">AMPDLabs</span>
             </div>
             <div className="flex justify-end">
               <ConnectButton />
@@ -42,7 +42,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
             </div>
           </div>
           {children}
-          <footer className="fixed bottom-0 left-0 right-0 text-center p-2 flex justify-center items-center">Made with ❤️ by your frens at AMPDLabs <AmpdLogoIcon width="24px" height="24px" /></footer>
+          <footer className="fixed bottom-0 left-0 right-0 text-center p-2 flex justify-center items-center text-sm">Made with ❤️ by your frens at AMPDLabs </footer>
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
