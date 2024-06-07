@@ -57,12 +57,15 @@ export default function Home() {
       return <div>No active matches found. Please create a new match!</div>;
     } else {
       return incompleteMatches?.map((match, index) => (
-        <Card key={index}>
+        <Card className="m-2" key={index}>
           <CardHeader>
             <CardTitle>Match: {match?.matchId.toString()}</CardTitle>
             <CardDescription>
               <a target="_blank" href={`https://sepolia.basescan.org/address/${match?.player1}`}>
-                <Button variant="outline"><OpenInNewWindowIcon className="mr-2" />Player 1</Button>
+                <Button variant="outline">
+                  <OpenInNewWindowIcon className="mr-2" />
+                  Player 1
+                </Button>
               </a>
             </CardDescription>
             <CardDescription>Bet: {formatEther(match?.bet1)}ETH</CardDescription>
@@ -81,8 +84,14 @@ export default function Home() {
   return (
     <main className="min-h-screen dark:bg-gradient-to-r dark:from-black dark:via-indigo-900 dark:to-black bg-gradient-to-b from-stone-50 to-rose-50">
       <div className="flex flex-col items-center">
-        <div className="mt-24">
-          Create or join a match.
+        <h1 className="mt-24 lg:text-4xl sm:text-3xl text-lg">
+          Welcome to the <b className="lg:text-4xl sm:text-3xl text-xl uppercase">template</b>
+        </h1>
+        <p className="max-w-2xl text-center opacity-80 pl-8 pr-8 pt-2 sm:text-base text-xs">
+          This NextJs template is setup to use <a href="https://ui.shadcn.com/">⚫️ shadcn/ui</a>, <a href="https://github.com/rainbow-me/rainbowkit">🌈 RainbowKit</a> and <a href="https://wagmi.sh/">🟣🩵 wagmi.sh</a>. It also comes equipped with a light and dark mode toggle setup ☀️🌕 and read/write
+          integration with smart contract, enjoy 🤝.
+        </p>
+        <div className="mt-12">
           <Badge>{readContractResult?.data?.toString()}</Badge> matches have been played so far.
           <div className="flex items-center justify-center mt-2">
             <Button onClick={createMatch}>
@@ -91,9 +100,8 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="mt-24">
-          <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-center"></div>
-          <div className="grid">
+        <div className="mt-8">
+          <div className="mb-32 justify-center items-center text-center flex flex-wrap">
             {isLoading && <p>Loading matches...</p>}
             {isError && <p>Error loading matches.</p>}
             {getMatchList()}
